@@ -1,1 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"); 
 
+/*  below the "*{}" is called a universal selector. 
+ */
+
+ *{
+     box-sizing: border-box;
+      margin: 0 ;   /* this means no space between elements. brought photos of product closer. */
+      padding: 0;   /* this means no space around the elements content tightened photos closer together (better) */
+ }
+
+ html, 
+ body{
+     font-family: 'Open Sans', sans-serif;
+     color: whitesmoke;
+     height: 100%;
+     width: 100%;
+     overflow: hidden; /*  no scroll bars it hides them */
+     background-color: #333;
+     line-height: 1.5 ;
+ }
+ 
+ .slider-container{
+     
+ }
