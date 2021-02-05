@@ -1,25 +1,76 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"); 
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 /*  below the "*{}" is called a universal selector. 
  */
 
- *{
-     box-sizing: border-box;
-      margin: 0 ;   /* this means no space between elements. brought photos of product closer. */
-      padding: 0;   /* this means no space around the elements content tightened photos closer together (better) */
- }
+* {
+  box-sizing: border-box;
+  margin: 0; /* this means no space between elements. brought photos of product closer. */
+  padding: 0; /* this means no space around the elements content tightened photos closer together (better) */
+}
 
- html, 
- body{
-     font-family: 'Open Sans', sans-serif;
-     color: whitesmoke;
-     height: 100%;
-     width: 100%;
-     overflow: hidden; /*  no scroll bars it hides them */
-     background-color: #333;
-     line-height: 1.5 ;
- }
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  color: whitesmoke;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;/*  no scroll bars it hides them */
+  background-color: #333;
+  line-height: 1.5;
+}
+
+.slider-container {
+  height: 100vh; /* this takes up whole height of browser*/
+  display: inline-flex; /* this makes everthing go in a horizontal row */
+  overflow: hidden; /*  no scroll bars it hides them */
+  
+  /* Below the transform "translateX"(0) starts on the x axis */
+  /* the transition taking in "transform' will create a good sliding transition from left to right  */
+
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+  cursor: grab; 
+}
+
+.slide{
+    max-height: 100vh;
+    width: 100vw; /* this is 100% of the view width of the screen */
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center; /* centers horizontally */
+    justify-content: center; /* Align the flex items at the center of the container: */
+    padding: 1rem; 
+    user-select: none; /* doesnt allow you to select the image off the page */
+}
+
+.slide img{
+    max-width: 100% ;/* takes up 100% of the size of its container*/
+    max-height: 80%;
+
+}
+
+.slide h2{
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem ;
+}
+
+.slide h4 {
+  font-size: 1.3rem ; 
+}
+.btn{
+  background-color : #444;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 1rem 1.5rem; 
+  border-radius: 15%; 
  
- .slider-container{
-     
- }
+}
+.grabbing{
+  cursor: grabbing;
+
+}
+.grabbing .slide img{
+  transform: scale(0.9);
+}
