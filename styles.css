@@ -48,6 +48,7 @@ body {
 .slide img{
     max-width: 100% ;/* takes up 100% of the size of its container*/
     max-height: 80%;
+    transition: transform 0.3s ease-in-out;
 
 }
 
