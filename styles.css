@@ -12,11 +12,11 @@
 html,
 body {
   font-family: "Open Sans", sans-serif;
-  color: whitesmoke;
+  color:  #444;
   height: 100%;
   width: 100%;
   overflow: hidden;/*  no scroll bars it hides them */
-  background-color: #333;
+  background-color: #FFFFFF;
   line-height: 1.5;
 }
 
@@ -65,7 +65,7 @@ body {
   text-decoration: none;
   color: whitesmoke;
   padding: 1rem 1.5rem; 
-  border-radius: 15%; 
+  border-radius: 5%; 
  
 }
 .grabbing{
