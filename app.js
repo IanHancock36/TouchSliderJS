@@ -25,18 +25,42 @@ slides.forEach((slide, index)=> {
  const slideImage = slide.querySelector('img')
  slideImage.addEventListener('dragstart',(e) => e.preventDefault())
 // Touch Events // this takes individual slides when you put your finger on a device
-slide.addEventListener('touchstart')
+// its going to call a function called TouchStart takes the index of the indvidual slide we are on 
+// you want it to also work on the click of the mouse. 
+
+slide.addEventListener('touchstart', touchStart(index))
+slide.addEventListener('touched', touchEnd)
+slide.addEventListener('touchmove', touchMove)
 
 // Mouse Events 
-
-
-
+slide.addEventListener('mousedown', touchStart(index))
+slide.addEventListener('mouseup', touchEnd)
+slide.addEventListener('mousedleave', touchEnd)
+slide.addEventListener('mousedmove', touchMove)
 }) 
 
 
+// Now you need to make functions to call all of these event listeners 
+// because slide.addEventListener('touchstart', touchStart(index)) is calling the function and taking it in that way you must
+// call it like this. 
+
+function touchStart(index){
+  return function(event){
+    isDragging = true // this changes the original state from false to true
+    console.log('start')
+  }
+}
+
+function touchEnd(){
+  isDragging = false // when you are dragging it turns the is dragging state back to false shutting it off. the original global state. 
+  console.log('end')
+}
 
 
-
+function touchMove(){
+  if(isDragging)
+  console.log('move')
+}
 
 
 
